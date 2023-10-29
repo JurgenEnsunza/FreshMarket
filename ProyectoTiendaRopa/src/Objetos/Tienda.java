@@ -1,5 +1,6 @@
 package Objetos;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,8 +24,54 @@ public class Tienda {
 		
 	}
 	
+	private static Cliente buscarClientes(String dni) {
+		int pos = 0;
+		boolean vd = (false);
+		Cliente c = null;
+		
+		while (!vd && pos<clientes.size()) {
+			c = clientes.get(pos);
+			if (c.getDni().equals(dni)) {
+				vd = true;
+			}else {
+				pos++;
+			}
+			if(vd==true) {
+				return  c;
+				}else {
+				return null;
+				}}
+		return null;
+	}
+			
+	/*private static Cliente guardarClienteFichero( String nomfich) {
+		try {
+			PrintWriter fichero = new PrintWriter(nomfich);
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		}		}*/
+		
+		
+}
+			
+			
+			
+			
+			
+		
+		
+	
+	
 	
 	
 	
 
-}
+

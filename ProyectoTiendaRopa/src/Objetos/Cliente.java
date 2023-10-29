@@ -2,7 +2,7 @@ package Objetos;
 
 import java.text.SimpleDateFormat;
 
-public class Cliente {
+public class Cliente implements Comparable <Cliente> {
 		
 	private String dni;
 	private String usuario;
@@ -47,9 +47,15 @@ public class Cliente {
 	/**
 	 * @return the fechaNacimiento
 	 */
+
+	
 	public SimpleDateFormat getFechaNacimiento() {
 		return fechaNacimiento;
 	}
+	
+
+	
+	
 	/**
 	 * @param fechaNacimiento the fechaNacimiento to set
 	 */
@@ -69,11 +75,18 @@ public class Cliente {
 		this.contraseña = contraseña;
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	
 	@Override
 	public String toString() {
 		return "Cliente [dni=" + dni + ", usuario=" + usuario + ", contraseña=" + contraseña + ", fechaNacimiento="
 				+ fechaNacimiento + "]";
 	}
+	
+	public int compareTo(Cliente o){
+		return this.dni.compareTo(o.dni);
+		
+	}
+	
 	
 	
 	
